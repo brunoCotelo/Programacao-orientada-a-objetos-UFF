@@ -1,0 +1,26 @@
+
+import javax.swing.*;
+
+class Main {
+
+  public static int pesquisa(String nome, String[] vetor){
+    int achou = 0;
+    for(int vet = 0; vet < vetor.length; vet++){
+      if(nome.equals(vetor[vet])){
+        achou = 1;
+      }
+    }
+    return achou;
+  }
+
+  public static void main(String[] args) {
+    String[] vetor = {"Cotelo", "Ferraz", "Thalita", "Tiago"};
+    String nome = JOptionPane.showInputDialog("Insira um nome: ");
+    if(pesquisa(nome, vetor) == 1){
+      JOptionPane.showMessageDialog(null, "Existe no vetor");
+    }
+    else{
+      JOptionPane.showMessageDialog(null, "Nao existe no vetor");
+    }
+  }
+}

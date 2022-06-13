@@ -1,0 +1,32 @@
+
+import javax.swing.*;
+
+class Main {
+
+  public static int pesquisa(int numero, int[] vetor){
+    int achou = 0;
+    for(int vet = 0; vet < 10; vet++){
+      if(vetor[vet] == numero){
+        achou = 1;
+      }
+    }
+    return achou;
+  }
+
+  public static void main(String[] args) {
+    int[] vetor = new int[10];
+    for(int i = 0; i < 10; i++){
+      vetor[i] = i;
+    }
+    for(int vet = 0; vet < 10; vet++){
+      System.out.println(vetor[vet]);
+    }
+    int numero = Integer.parseInt(JOptionPane.showInputDialog("Insira um numero: "));
+    if(pesquisa(numero, vetor) == 1){
+      JOptionPane.showMessageDialog(null, "Existe no vetor");
+    }
+    else{
+      JOptionPane.showMessageDialog(null, "Nao existe no vetor");
+    }
+  }
+}
